@@ -16,10 +16,10 @@ def extract_extension(fname):
     """Extract the extension of a given file
     
     Args:
-        fname = string of the filename
+        fname -- string of the filename
         
     Returns:
-        extension = string of the extension
+        extension -- string of the extension
     """
     temp = fname.split('.')
     extension = temp[-1]  # last element of list (i.e. extension)
@@ -32,14 +32,14 @@ def keep_foi(fnames, fextens, ftype):
     based on the given info
     
     Args:
-        fnames = list of strings of  the filenames
-        fextens = dictionary {'Image': list of image files' extensions,
+        fnames -- list of strings of  the filenames
+        fextens -- dictionary {'Image': list of image files' extensions,
                               'Video': list of video files' extensions
                               }
-        ftype = string with one key of fextens dictionary
+        ftype -- string with one key of fextens dictionary
         
     Returns:
-        fnames_foi = list of filenames of interest (foi)
+        fnames_foi -- list of filenames of interest (foi)
     """
     
     fnames_foi = []
@@ -60,11 +60,11 @@ def standardize_delimiter(fnames, old_delim, new_delim):
     of the files use '-' as a delimiter, while others use '_'.
     
     Args:
-        fnames = list of strings of  the filenames
-        delim = string with the new delimiter
+        fnames -- list of strings of  the filenames
+        delim -- string with the new delimiter
         
     Returns:
-        fnames_stand = list of strings of  the filenames with standardized
+        fnames_stand -- list of strings of  the filenames with standardized
                        delimiter
     """
     
@@ -80,10 +80,10 @@ def extract_dates(fnames):
     """Extract the dates from filenames into a datetime format
     
     Args:
-        fnames = list of strings of  the filenames
+        fnames -- list of strings of  the filenames
         
     Returns:
-        fdates = list of datetime with the dates of each file
+        fdates -- list of datetime with the dates of each file
     """
     
     fdates = []
@@ -103,11 +103,11 @@ def dates_diff(fdates, start_date):
     All dates are in datetime format.
     
     Args:
-        fdates = list of datetime with the dates of each file
+        fdates -- list of datetime with the dates of each file
         start_date = datetime of date of reference
         
     Returns:
-        ddiff = list of integers with the difference in days
+        ddiff -- list of integers with the difference in days
     """
     
     ddiff = []
@@ -124,12 +124,12 @@ def sort_dates_names(fdate_diff, fnames):
     former
     
     Args:
-        fdate_diff = list of integers with the difference in days
-        fnames = list of strings of  the filenames
+        fdate_diff -- list of integers with the difference in days
+        fnames -- list of strings of  the filenames
         
     Returns:
-        fdate_diff_sorted = fdate_diff sorted
-        fnames_sorted = fnames_sorted based on fdate_diff
+        fdate_diff_sorted -- fdate_diff sorted
+        fnames_sorted -- fnames_sorted based on fdate_diff
     """
     
     temp = sorted(zip(fdate_diff, fnames))
@@ -143,11 +143,11 @@ def name_change(fnames, fdate_diff):
     addition of the prefix
     
     Args:
-        fnames = list of strings of  the filenames
-        fdate_diff = list of strings of the filenames
+        fnames -- list of strings of  the filenames
+        fdate_diff -- list of strings of the filenames
         
     Returns:
-        fnames_new = list of strings of the new filenames
+        fnames_new -- list of strings of the new filenames
     """
     
     # Initialization
@@ -171,5 +171,5 @@ def name_change(fnames, fdate_diff):
         
     return fnames_new
 
-if __name__=='__main__':
+if __name__ == '__main__':
     pass

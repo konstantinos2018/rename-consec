@@ -98,3 +98,22 @@ def extract_dates(fnames):
     return fdates
 
 
+def dates_diff(fdates, start_date):
+    """Calculates the difference between dates in a list and a reference date.
+    All dates are in datetime format.
+    
+    Args:
+        fdates = list of datetime with the dates of each file
+        start_date = datetime of date of reference
+        
+    Returns:
+        ddiff = list of integers with the difference in days
+    """
+    
+    ddiff = []
+    
+    for date in fdates:
+        date_temp = date - start_date
+        ddiff.append(date_temp.days)
+        
+    return ddiff

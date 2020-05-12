@@ -22,4 +22,5 @@ fdates = refun.extract_dates(fnames)
 
 # starting (reference) date
 start_date = dt.datetime(2019, 2, 19)
+fdate_diff = refun.dates_diff(fdates, start_date)  # calculate differences
 

@@ -4,6 +4,8 @@
 # =============================================================================
 import os
 from renamepy import renamefuncs as refun
+import datetime as dt
+
 cdir = 'H:\Bells Palsy project\clips_and_photos\Backup'
 fnames = os.listdir(cdir)
 fextens = {'Image': ['jpg', 'jpeg'],
@@ -17,3 +19,6 @@ fnames_orig = fnames  # keep original
 fnames = refun.standardize_delimiter(fnames, old_delim='-', new_delim='_')
 
 fdates = refun.extract_dates(fnames)
+
+# starting (reference) date
+start_date = dt.date(2019, 2, 19)

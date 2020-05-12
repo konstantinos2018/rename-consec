@@ -6,6 +6,11 @@ Created on Tue May 12 13:40:25 2020
 @email: kvlachos.geo@gmail.com
 @linkedin: www.linkedin.com/in/kostasvlachosgrs
 """
+# =============================================================================
+# Imports
+# =============================================================================
+import datetime as dt
+
 
 def extract_extension(fname):
     """Extract the extension of a given file
@@ -69,4 +74,27 @@ def standardize_delimiter(fnames, old_delim, new_delim):
         fnames_stand.append(name.replace(old_delim, new_delim))
         
     return fnames_stand
+
+
+def extract_dates(fnames):
+    """Extract the dates from filenames into a datetime format
+    
+    Args:
+        fnames = list of strings of  the filenames
+        
+    Returns:
+        fdates = list of datetime with the dates of each file
+    """
+    
+    fdates = []
+    
+    for name in fnames:
+        date_temp = name.split('_')
+        date_temp = date_temp[1]  # keep date
+        date_temp = dt.datetime.strptime(date_temp, '%Y%m%d')  # convert to dt
+        
+        fdates.append(date_temp)
+        
+    return fdates
+
 

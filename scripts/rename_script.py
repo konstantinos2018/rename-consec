@@ -11,3 +11,4 @@ fextens = {'Image': ['jpg', 'jpeg'],
           }
 
 fnames = refun.keep_foi(fnames, fextens, ftype='Image')
+fnames_orig = fnames  # keep original

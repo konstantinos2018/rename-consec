@@ -117,3 +117,22 @@ def dates_diff(fdates, start_date):
         ddiff.append(date_temp.days)
         
     return ddiff
+
+
+def sort_dates_names(fdate_diff, fnames):
+    """Sorts the date differences list and the filenames list based on the
+    former
+    
+    Args:
+        fdate_diff = list of integers with the difference in days
+        fnames = list of strings of  the filenames
+        
+    Returns:
+        fdate_diff_sorted = fdate_diff sorted
+        fnames_sorted = fnames_sorted based on fdate_diff
+    """
+    
+    temp = sorted(zip(fdate_diff, fnames))
+    fdate_diff_sorted, fnames_sorted = zip(*temp)
+    
+    return list(fdate_diff_sorted), list(fnames_sorted)

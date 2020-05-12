@@ -24,3 +24,7 @@ fdates = refun.extract_dates(fnames)
 start_date = dt.datetime(2019, 2, 19)
 fdate_diff = refun.dates_diff(fdates, start_date)  # calculate differences
 
+# sort original
+_, fnames_orig = refun.sort_dates_names(fdate_diff, fnames_orig)
+# sort later current version
+fdate_diff, fnames = refun.sort_dates_names(fdate_diff, fnames)

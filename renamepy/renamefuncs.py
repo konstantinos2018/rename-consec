@@ -170,3 +170,6 @@ def name_change(fnames, fdate_diff):
             k = k + 1
         
     return fnames_new
+
+if __name__=='__main__':
+    pass

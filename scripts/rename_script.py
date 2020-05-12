@@ -21,4 +21,5 @@ fnames = refun.standardize_delimiter(fnames, old_delim='-', new_delim='_')
 fdates = refun.extract_dates(fnames)
 
 # starting (reference) date
-start_date = dt.date(2019, 2, 19)
+start_date = dt.datetime(2019, 2, 19)
+

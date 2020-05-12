@@ -47,3 +47,26 @@ def keep_foi(fnames, fextens, ftype):
 #    [name for name in fnames for exten in fextens['Image'] if exten in extract_extension(name)]
 
     return fnames_foi
+
+
+def standardize_delimiter(fnames, old_delim, new_delim):
+    """Standardize the delimiter that is used in the filenames. The reason for
+    this is that different files use different delimiters. For example, part
+    of the files use '-' as a delimiter, while others use '_'.
+    
+    Args:
+        fnames = list of strings of  the filenames
+        delim = string with the new delimiter
+        
+    Returns:
+        fnames_stand = list of strings of  the filenames with standardized
+                       delimiter
+    """
+    
+    fnames_stand = []
+    
+    for name in fnames:
+        fnames_stand.append(name.replace(old_delim, new_delim))
+        
+    return fnames_stand
+

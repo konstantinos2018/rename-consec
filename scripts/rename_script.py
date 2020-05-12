@@ -12,3 +12,7 @@ fextens = {'Image': ['jpg', 'jpeg'],
 
 fnames = refun.keep_foi(fnames, fextens, ftype='Image')
 fnames_orig = fnames  # keep original
+
+# ***I could have renamed the names of files with the new delimiter also ***
+fnames = refun.standardize_delimiter(fnames, old_delim='-', new_delim='_')
+

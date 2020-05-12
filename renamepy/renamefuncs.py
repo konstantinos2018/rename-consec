@@ -20,3 +20,30 @@ def extract_extension(fname):
     extension = temp[-1]  # last element of list (i.e. extension)
     
     return extension
+
+
+def keep_foi(fnames, fextens, ftype):
+    """Given a list of filenames, keep the filenames of interest (foi)
+    based on the given info
+    
+    Args:
+        fnames = list of strings of  the filenames
+        fextens = dictionary {'Image': list of image files' extensions,
+                              'Video': list of video files' extensions
+                              }
+        ftype = string with one key of fextens dictionary
+        
+    Returns:
+        fnames_foi = list of filenames of interest (foi)
+    """
+    
+    fnames_foi = []
+    
+    for name in fnames:
+        for exten in fextens[ftype]:
+            if exten in extract_extension(name):
+                fnames_foi.append(name)
+
+#    [name for name in fnames for exten in fextens['Image'] if exten in extract_extension(name)]
+
+    return fnames_foi

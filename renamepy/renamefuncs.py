@@ -136,3 +136,37 @@ def sort_dates_names(fdate_diff, fnames):
     fdate_diff_sorted, fnames_sorted = zip(*temp)
     
     return list(fdate_diff_sorted), list(fnames_sorted)
+
+
+def name_change(fnames, fdate_diff):
+    """ Change the names of the files to the new desired names with the
+    addition of the prefix
+    
+    Args:
+        fnames = list of strings of  the filenames
+        fdate_diff = list of strings of the filenames
+        
+    Returns:
+        fnames_new = list of strings of the new filenames
+    """
+    
+    # Initialization
+    k = 0
+    flag_ddiff = fdate_diff[0]  # flag
+    fnames_new = []
+    
+    for name, ddiff in zip(fnames, fdate_diff):
+    
+        if flag_ddiff == ddiff:            
+            s = 'Day_{0}_{1}_{2}'.format(ddiff, k, name)
+            fnames_new.append(s)
+            k = k + 1
+            
+        else:
+            k = 0
+            flag_ddiff = ddiff
+            s = 'Day_{0}_{1}_{2}'.format(ddiff, k, name)
+            fnames_new.append(s)
+            k = k + 1
+        
+    return fnames_new

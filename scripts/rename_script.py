@@ -28,3 +28,6 @@ fdate_diff = refun.dates_diff(fdates, start_date)  # calculate differences
 _, fnames_orig = refun.sort_dates_names(fdate_diff, fnames_orig)
 # sort later current version
 fdate_diff, fnames = refun.sort_dates_names(fdate_diff, fnames)
+
+# change name of file
+fnames_new = refun.name_change(fnames_orig, fdate_diff)

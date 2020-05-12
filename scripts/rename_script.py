@@ -31,3 +31,6 @@ fdate_diff, fnames = refun.sort_dates_names(fdate_diff, fnames)
 
 # change name of file
 fnames_new = refun.name_change(fnames_orig, fdate_diff)
+
+for old_name, new_name in zip(fnames_orig, fnames_new):
+    os.rename(os.path.join(cdir, old_name), os.path.join(cdir, new_name))
